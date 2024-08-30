@@ -7,6 +7,9 @@
 
 body {
   font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure body takes up full viewport height */
 }
 
 .header {
@@ -49,38 +52,53 @@ main {
   color: white;
   font-size: 2rem; /* Adjusted font size for better mobile display */
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   text-align: center;
 }
 
 .center-box {
   background-color: yellow;
-  width: 60%; /* aangepast voor mobiel*/
-  height: auto; /* auto voor mobiel hoeft niet vast te staan*/
-  max-height: 75vh; /* zodat het niet grooter wordt dan dan 75% */
+  width: 65%; /* Adjusted for mobile */
+  height: auto; /* Auto for mobile, so it doesn’t need to be fixed */
+  max-height: 75vh; /* So it doesn’t grow larger than 75% */
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row; /* Align items in a row */
+  justify-content: space-around; /* Space out contents */
+  align-items: center; /* Center items vertically */
   text-align: center;
   border: 2px solid black;
   border-radius: 20px;
-  overflow: hidden; /*als de img out komt verbergt het*/
+  overflow: hidden; /* Hides overflow if the content exceeds the box */
   margin-bottom: 25px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  width: 95%;
+  height: 100%;
 }
 
 .rooster {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 90%;
+  width: 50%; /* Adjust width as needed */
+  max-height: 100%; /* Ensure it doesn’t exceed container size */
 }
 
 .rooster img {
-  /*voor het rooster img*/
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain; /*zodat het in de box blijft*/
+  max-width: 100%; /* Ensure it scales within container width */
+  max-height: 100%; /* Ensure it scales within container height */
+  width: auto; /* Maintain aspect ratio */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Keeps the image within the box */
+}
+
+.vakken {
+  width: 50%; /* Adjust width as needed */
+  padding: 10px; /* Add padding for spacing */
+  text-align: center; /* Align text to the center */
 }
 
 /* Responsive design */
@@ -106,6 +124,13 @@ main {
   .center-box {
     width: 95%; /* Further adjusted width for better mobile display */
   }
+
+  .rooster,
+  .vakken {
+    width: 100%; /* Full width on smaller screens */
+    text-align: center; /* Center text on smaller screens */
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
 }
 
 @media (max-width: 480px) {
@@ -123,8 +148,53 @@ main {
   }
 }
 
+/* Footer Styles */
 footer {
   background-color: #2add5d;
   width: 100%;
-  height: 10vh;
+  height: 10vh; /* Height of the footer */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px; /* Padding for spacing */
+  box-sizing: border-box; /* Ensure padding is included in the height */
+  text-align: center;
+  position: relative; /* Ensure footer does not overlap content */
+}
+
+footer p {
+  color: white; /* Text color for the footer */
+  font-size: 1rem; /* Adjust font size as needed */
+}
+
+/* Ensure footer always at the bottom */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1; /* Allow main content to grow and push footer to bottom */
+}
+
+/* Responsive design for the footer */
+@media (max-width: 768px) {
+  footer {
+    height: auto; /* Allow footer height to adjust based on content */
+    padding: 15px;
+  }
+
+  footer p {
+    font-size: 0.9rem; /* Adjust font size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  footer {
+    padding: 20px; /* More padding for very small screens */
+  }
+
+  footer p {
+    font-size: 0.8rem; /* Even smaller font size for very small screens */
+  }
 }
