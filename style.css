@@ -1,4 +1,5 @@
-/* Reset any default margins and paddings */
+/* style.css */
+
 * {
   margin: 0;
   padding: 0;
@@ -7,194 +8,87 @@
 
 body {
   font-family: Arial, sans-serif;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* Ensure body takes up full viewport height */
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
 }
 
 .header {
-  height: 10vh;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  background-color: #0050ff;
 }
 
 .logo img {
-  max-height: 60px;
+  height: 50px;
 }
 
 .nav-links a {
-  margin-right: 20px; /* Adjusted space between links for better mobile display */
+  color: #fff;
   text-decoration: none;
-  color: #fc3232;
-  font-size: 18px; /* Adjusted font size for better mobile display */
+  margin-left: 20px;
 }
 
 .nav-links a:hover {
-  color: #f9aecd;
+  text-decoration: underline;
 }
 
-main {
-  background-color: #69197c;
-  width: 100%;
-  height: 80vh;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0 10px; /* Added padding to avoid content touching screen edges on mobile */
+.main {
+  padding: 20px;
 }
 
 .text-top {
-  color: white;
-  font-size: 2rem; /* Adjusted font size for better mobile display */
+  font-size: 24px;
+  font-weight: bold;
   margin-top: 20px;
-  margin-bottom: 40px;
   text-align: center;
+  color: #333;
 }
 
 .center-box {
-  background-color: yellow;
-  width: 65%; /* Adjusted for mobile */
-  height: auto; /* Auto for mobile, so it doesn’t need to be fixed */
-  max-height: 75vh; /* So it doesn’t grow larger than 75% */
-  display: flex;
-  flex-direction: row; /* Align items in a row */
-  justify-content: space-around; /* Space out contents */
-  align-items: center; /* Center items vertically */
-  text-align: center;
-  border: 2px solid black;
-  border-radius: 20px;
-  overflow: hidden; /* Hides overflow if the content exceeds the box */
-  margin-bottom: 25px;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 800px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .content {
-  display: flex;
-  align-items: center;
-  width: 95%;
-  height: 100%;
-}
-
-.rooster {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50%; /* Adjust width as needed */
-  max-height: 100%; /* Ensure it doesn’t exceed container size */
+  margin: 20px 0;
 }
 
 .rooster img {
-  max-width: 100%; /* Ensure it scales within container width */
-  max-height: 100%; /* Ensure it scales within container height */
-  width: auto; /* Maintain aspect ratio */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: contain; /* Keeps the image within the box */
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 .vakken {
-  width: 50%; /* Adjust width as needed */
-  padding: 10px; /* Add padding for spacing */
-  text-align: center; /* Align text to the center */
+  margin-top: 20px;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    height: auto;
-  }
-
-  .nav-links {
-    margin-top: 10px;
-  }
-
-  .nav-links a {
-    margin-right: 20px; /* Reduced margin for mobile */
-    font-size: 16px; /* Smaller font size for mobile */
-  }
-
-  .text-top {
-    font-size: 1.5rem; /* Smaller font size for mobile */
-  }
-
-  .center-box {
-    width: 95%; /* Further adjusted width for better mobile display */
-  }
-
-  .rooster,
-  .vakken {
-    width: 100%; /* Full width on smaller screens */
-    text-align: center; /* Center text on smaller screens */
-    padding: 10px; /* Adjust padding for smaller screens */
-  }
+.vakken h2 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
 }
 
-@media (max-width: 480px) {
-  .nav-links a {
-    margin-right: 10px; /* Further reduced margin for very small screens */
-    font-size: 14px; /* Even smaller font size for very small screens */
-  }
-
-  .text-top {
-    font-size: 1.2rem; /* Even smaller font size for very small screens */
-  }
-
-  .center-box {
-    width: 100%; /* Full width for very small screens */
-  }
+.vakken p {
+  margin-bottom: 10px;
+  line-height: 1.5;
 }
 
-/* Footer Styles */
 footer {
-  background-color: #2add5d;
-  width: 100%;
-  height: 10vh; /* Height of the footer */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px; /* Padding for spacing */
-  box-sizing: border-box; /* Ensure padding is included in the height */
+  background-color: #333;
+  color: #fff;
   text-align: center;
-  position: relative; /* Ensure footer does not overlap content */
-}
-
-footer p {
-  color: white; /* Text color for the footer */
-  font-size: 1rem; /* Adjust font size as needed */
-}
-
-/* Ensure footer always at the bottom */
-body {
-  display: flex;
-  flex-direction: column;
-}
-
-main {
-  flex: 1; /* Allow main content to grow and push footer to bottom */
-}
-
-/* Responsive design for the footer */
-@media (max-width: 768px) {
-  footer {
-    height: auto; /* Allow footer height to adjust based on content */
-    padding: 15px;
-  }
-
-  footer p {
-    font-size: 0.9rem; /* Adjust font size for smaller screens */
-  }
-}
-
-@media (max-width: 480px) {
-  footer {
-    padding: 20px; /* More padding for very small screens */
-  }
-
-  footer p {
-    font-size: 0.8rem; /* Even smaller font size for very small screens */
-  }
+  padding: 10px 0;
+  margin-top: 20px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
